@@ -32,7 +32,7 @@ public:
     /**
      * Copy the parameter name to @ref out_name if it exists, otherwise do nothing.
      */
-    virtual void getParamNameByIndex(Index index, Name& out_name) const = 0;
+    virtual void getParamNameByIndex(Index index, Name& out_name) = 0;
 
     /**
      * Assign by name if exists.
@@ -42,7 +42,7 @@ public:
     /**
      * Read by name if exists, otherwise do nothing.
      */
-    virtual void readParamValue(const Name& name, Value& out_value) const = 0;
+    virtual void readParamValue(const Name& name, Value& out_value) = 0;
 
     /**
      * Read param's default/max/min if available.
@@ -50,7 +50,7 @@ public:
      * Implementation is optional.
      */
     virtual void readParamDefaultMaxMin(const Name& name, Value& out_default,
-                                        NumericValue& out_max, NumericValue& out_min) const
+                                        NumericValue& out_max, NumericValue& out_min)
     {
         (void)name;
         (void)out_default;
